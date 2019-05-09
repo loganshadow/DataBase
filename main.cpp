@@ -15,7 +15,17 @@ int main() {
     vector <employee> employee;
 
     getline(fin, buff);
-    
-
+    wbuff.name = buff;
+    getline(fin, buff);
+    wbuff.sname = buff;
+    getline(fin, buff);
+    wbuff.email = buff;
+    getline(fin, buff);
+    wbuff.phone = stoi(buff);
+    getline(fin, buff);
+    wbuff.passport = stoi(buff);
+    getline(fin, buff);
+    wbuff.post = buff;
+    employee.push_back(wbuff);
     return 0;
 }

@@ -8,13 +8,14 @@ public:
     std::string sname;
     std::string email;
     int phone;
-    std::string passport;
+    int passport;
     std::string post;
 
     employee();
     employee(const employee &alt);
     void add_employee();
-
+    void get_employee();
     void set_employee(const employee &alt);
+    ~employee(){};
 };
 #endif //DATABASE_CLASSES_H

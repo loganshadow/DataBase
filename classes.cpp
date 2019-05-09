@@ -23,6 +23,10 @@ void employee::add_employee() {
     cout << "Employee successfully added!";
 }
 
+void employee::get_employee() {
+    cout << name << endl << sname << endl << email << endl << phone << endl << passport << endl << post << endl;
+}
+
 void employee::set_employee(const employee &alt) {
 
 }
