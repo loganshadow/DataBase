@@ -9,23 +9,32 @@ using namespace std;
 int main() {
 
     string buff;
-    employee wbuff;
+    employee workerBuff;
     ofstream fout("DataBase.txt");
+    fout.close();
     ifstream fin("DataBase.txt");
     vector <employee> employee;
 
+    while(!fin.eof( )){
+        fin >> workerBuff;
+        employee.push_back(workerBuff);
+    }
+    fin.close();
+
+/*
     getline(fin, buff);
-    wbuff.name = buff;
+    workerBuff.name = buff;
     getline(fin, buff);
-    wbuff.sname = buff;
+    workerBuff.sname = buff;
     getline(fin, buff);
-    wbuff.email = buff;
+    workerBuff.email = buff;
     getline(fin, buff);
-    wbuff.phone = stoi(buff);
+    workerBuff.phone = stoi(buff);
     getline(fin, buff);
-    wbuff.passport = stoi(buff);
+    workerBuff.passport = stoi(buff);
     getline(fin, buff);
-    wbuff.post = buff;
-    employee.push_back(wbuff);
+    workerBuff.post = buff;
+    employee.push_back(workerBuff);
+*/
     return 0;
 }
