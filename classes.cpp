@@ -7,7 +7,7 @@ using std::endl;
 
 void employee::add_employee() {
     cout << "Enter data for new employee" << endl
-    << "Name: ";
+    << "Name: " << endl;
     cin >> name;
     cout << "Surname: " << endl;
     cin >> sname;
@@ -20,13 +20,19 @@ void employee::add_employee() {
     cout << "Post: " << endl;
     cin >> post;
     system("cls");
-    cout << "Employee successfully added!";
+    cout << "Employee successfully added!" << endl;
 }
 
 void employee::get_employee() {
-    cout << name << endl << sname << endl << email << endl << phone << endl << passport << endl << post << endl;
+    cout << "Name:          " << name << endl;
+    cout << "Surname:       " << sname << endl;
+    cout << "Email:         " << email << endl;
+    cout << "Contact phone: " << phone << endl;
+    cout << "Passport data: " << passport << endl;
+    cout << "Post:          " <<post << endl;
 }
-employee::employee(const employee &alt): name(alt.name), sname(alt.sname), email(alt.email), phone(alt.phone), passport(alt.passport)  {}
+
+employee::employee(const employee &alt): name(alt.name), sname(alt.sname), email(alt.email), phone(alt.phone), passport(alt.passport), post(alt.post)  {}
 
 std::ostream& operator<<(std::ostream &out, const employee &alt)
 {
@@ -41,16 +47,17 @@ std::ostream& operator<<(std::ostream &out, const employee &alt)
 
 std::istream& operator>>(std::istream& in, employee &alt)
 {
-    std::string buff;
     getline(in, alt.name);
     getline(in, alt.sname);
     getline(in, alt.email);
-    getline(in, buff);
-    alt.phone = stoi(buff);
-    getline(in, buff);
-    alt.passport = stoi(buff);
+    getline(in, alt.phone);
+    getline(in, alt.passport);
+    getline(in, alt.post);
     return in;
 }
+employee::employee(const std::string &name, const std::string &sname, const std::string &email, std::string phone, std::string passport,
+                   const std::string &post) : name(name), sname(sname), email(email), phone(phone), passport(passport),
+                                              post(post) {}
 
 const std::string &employee::getName() const {
     return name;
@@ -76,19 +83,19 @@ void employee::setEmail(const std::string &email) {
     employee::email = email;
 }
 
-int employee::getPhone() const {
+const std::string &employee::getPhone() const {
     return phone;
 }
 
-void employee::setPhone(int phone) {
+void employee::setPhone(const std::string &phone) {
     employee::phone = phone;
 }
 
-int employee::getPassport() const {
+const std::string &employee::getPassport() const {
     return passport;
 }
 
-void employee::setPassport(int passport) {
+void employee::setPassport(const std::string &passport) {
     employee::passport = passport;
 }
 
@@ -99,7 +106,3 @@ const std::string &employee::getPost() const {
 void employee::setPost(const std::string &post) {
     employee::post = post;
 }
-
-employee::employee(const std::string &name, const std::string &sname, const std::string &email, int phone, int passport,
-                   const std::string &post) : name(name), sname(sname), email(email), phone(phone), passport(passport),
-                                              post(post) {}
