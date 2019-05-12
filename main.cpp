@@ -39,7 +39,6 @@ X1: int menu = menuPage1();
             system("cls");
             DisplayAll(employee);
             DeleteEmployee(employee);
-            system("pause");
             goto X1;
         }
         if(menu == 4){//OPTION FOUR
@@ -62,6 +61,5 @@ X1: int menu = menuPage1();
     for (int i = 0; i < employee.size(); i++)
         fout << employee[i];
     fout.close();
-    system("pause");
     return 0;
 }
