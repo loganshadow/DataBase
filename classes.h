@@ -17,7 +17,7 @@ public:
              const std::string &post);
     employee(const employee &alt);
 
-    void add_employee();
+    int add_employee();
     void get_employee();
 
     friend std::ostream& operator<<(std::ostream& out, const employee &alt);

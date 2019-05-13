@@ -5,22 +5,43 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-void employee::add_employee() {
-    cout << "Enter data for new employee" << endl
+int employee::add_employee() {
+    cout << "Enter data for new employee or type 0 to exit to main menu" << endl
     << "Name: " << endl;
     cin >> name;
+    if(name == "0"){
+        goto X1;
+    }
     cout << "Surname: " << endl;
     cin >> sname;
+    if(sname == "0"){
+        goto X1;
+    }
     cout << "Email: " << endl;
     cin >> email;
+    if(email == "0"){
+        goto X1;
+    }
     cout << "Phone number: " << endl;
     cin >> phone;
+    if(phone == "0"){
+        goto X1;
+    }
     cout << "Passport data: " << endl;
     cin >> passport;
+    if(passport == "0"){
+        goto X1;
+    }
     cout << "Post: " << endl;
     cin >> post;
+    if(post == "0"){
+        goto X1;
+    }
     system("cls");
     cout << "Employee successfully added!" << endl;
+    return 1;
+X1:
+    return 0;
 }
 
 void employee::get_employee() {

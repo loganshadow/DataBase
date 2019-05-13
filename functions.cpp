@@ -107,8 +107,8 @@ M1:     i = -1;
 
 void AddEmployee(std::vector <employee> &employ){
     employee temp;
-    temp.add_employee();
-    employ.push_back(temp);
+    if(temp.add_employee() == 1)
+        employ.push_back(temp);
 }
 
 void DisplayAllandInfo(std::vector <employee> &employ){
@@ -176,7 +176,7 @@ void SearchEmployee(std::vector <employee> &employ){
     cout << "Type 0 to exit to main menu" << endl;
     cout << "---------------------------------------------------------------------" << endl;
     int j = -1;
-    int s = -1;
+    int s = 0;
     while(j < 0 || j > 2){
         cin >> j;
         if (j < 0 || j > 2)

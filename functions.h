@@ -14,5 +14,4 @@ void DisplayAll(std::vector <employee> &employ);
 void DisplayAllandInfo(std::vector <employee> &employ);
 void DeleteEmployee(std::vector <employee> &employ);
 
-
 #endif //DATABASE_FUNCTIONS_H
