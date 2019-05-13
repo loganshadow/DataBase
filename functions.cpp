@@ -176,7 +176,7 @@ void SearchEmployee(std::vector <employee> &employ){
     cout << "Type 0 to exit to main menu" << endl;
     cout << "---------------------------------------------------------------------" << endl;
     int j = -1;
-    int s = 0;
+    int s = -1;
     while(j < 0 || j > 2){
         cin >> j;
         if (j < 0 || j > 2)
