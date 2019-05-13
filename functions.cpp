@@ -143,7 +143,7 @@ void DisplayAll(std::vector <employee> &employ) {
 }
 
 void DeleteEmployee(std::vector <employee> &employ){
-     cout << "Enter number of employee for eraising from the base" << endl;
+     cout << "Enter number of employee for erasing from the base" << endl;
      cout << "Type 0 to exit to main menu" << endl;
      cout << "---------------------------------------------------------------------" << endl;
      int i = -1;
@@ -165,5 +165,66 @@ void DeleteEmployee(std::vector <employee> &employ){
              system("pause");
          }
      }
+
+}
+
+void SearchEmployee(std::vector <employee> &employ){
+    cout << "---------------------------------------------------------------------" << endl;
+    cout << "Choose criteria" <<endl;
+    cout << "1)Search by name" << endl;
+    cout << "2)Search by surname" << endl;
+    cout << "Type 0 to exit to main menu" << endl;
+    cout << "---------------------------------------------------------------------" << endl;
+    int j = -1;
+    int s = 0;
+    while(j < 0 || j > 2){
+        cin >> j;
+        if (j < 0 || j > 2)
+            cout << "Try again" << endl;
+    }
+    switch (j) {
+        case 1: {
+            std::string temp;
+            cout << "Enter name" << endl;
+            cin >> temp;
+            cout << "---------------------------------------------------------------------" << endl;
+            for (int i = 0; i < employ.size(); i++) {
+                if(temp == employ[i].getName()){
+                    cout << i + 1 << ")" << employ[i].getName() << " " << employ[i].getSname() << endl;
+                    s++;
+                }
+            }
+            if(s != 0) {
+                cout << "---------------------------------------------------------------------" << endl;
+                system("pause");
+            }
+            break;
+        }
+        case 2:{
+            std::string temp;
+            cout << "Enter surname" << endl;
+            cin >> temp;
+            cout << "---------------------------------------------------------------------" << endl;
+            for (int i = 0; i < employ.size(); i++) {
+                if(temp == employ[i].getSname()){
+                    cout << i + 1 << ")" << employ[i].getName() << " " << employ[i].getSname() << endl;
+                    s++;
+                }
+            }
+            if(s != 0) {
+                cout << "---------------------------------------------------------------------" << endl;
+                system("pause");
+            }
+            break;
+        }
+        case 0:
+            break;
+
+    }
+    if(s == 0) {
+        cout << "No matches" << endl;
+        cout << "---------------------------------------------------------------------" << endl;
+        system("pause");
+    }
 
 }

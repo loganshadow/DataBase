@@ -42,7 +42,9 @@ X1: int menu = menuPage1();
             goto X1;
         }
         if(menu == 4){//OPTION FOUR
-
+            system("cls");
+            SearchEmployee(employee);
+            goto X1;
         }
         if(menu == 5){//OPTION FIVE
             system("cls");
